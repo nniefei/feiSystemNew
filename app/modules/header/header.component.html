@@ -1,0 +1,101 @@
+<!-- Created by: fei on date: 2017/8/15. -->
+<div class="sys-head">
+    <!--大屏幕适配-->
+    <div class="for-lgscreen" ng-if="$ctrl.windowWidth>=1250">
+        <div class="col-lg-2 col-md-2 col-sm-2 text-center sys-title-font">FeiSystem</div>
+        <div class="col-lg-3 col-md-3 col-sm-3 text-right">
+            <input type="text" placeholder="">
+            <button class="" type="button" ng-click="$ctrl.headSearch();">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-5 text-center">
+            <div class="btn-group" role="group">
+                <button type="button" class="btn btn-default" ng-repeat="x in $ctrl.workTableList track by $index" ng-click="$ctrl.openWorkTable(x);">
+                    <i class="fa {{x.icon}} fa-lg space-right-10"></i>&nbsp;{{x.name}}
+                </button>
+            </div>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 text-center">
+            <button type="button" class="btn btn-default" ng-if="!$ctrl.headInit.ifWorking" ng-click="$ctrl.switchWork('off')">
+                <i class="fa fa-toggle-on fa-lg"></i>&nbsp;在线
+            </button>
+            <button type="button" class="btn btn-default" ng-if="$ctrl.headInit.ifWorking" ng-click="$ctrl.switchWork('on')">
+                <i class="fa fa-toggle-off fa-lg"></i>&nbsp;离开
+            </button>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.mailBox();">
+                <i class="fa fa-envelope-open-o"></i>
+            </button>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.forHelp();">
+                <i class="fa fa-question-circle-o"></i>
+            </button>
+            <button type="button" class="btn btn-default" ng-click="$ctrl.logout();">
+                <i class="fa fa-sign-out"></i>
+            </button>
+        </div>
+    </div>
+    <!--中屏幕适配-->
+    <div class="for-mdscreen" ng-if="$ctrl.windowWidth>=768 && $ctrl.windowWidth<1250">
+        <div class="col-lg-2 col-md-2 col-sm-2 sys-title-font text-center">FeiSystem</div>
+        <div class="col-lg-8 col-md-8 col-sm-8 text-right">
+            <input type="text" placeholder="">
+            <button class="" type="button" ng-click="$ctrl.headSearch();">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+        <div class="col-lg-2 col-md-2 col-sm-2 text-right">
+            <a drop-down id="memu-box-md">
+                <i class="fa fa-th fa-lg"></i>
+            </a>
+            <ul hidden>
+                <li class="dividing-line-level" ng-if="!$ctrl.headInit.ifWorking">
+                    <a ng-click="$ctrl.switchWork('off')"><i class="fa fa-toggle-on fa-lg"></i>&nbsp;在线</a>
+                    <a class="space-lr-10" ng-click="$ctrl.mailBox();"><i class="fa fa-envelope-open-o"></i></a>
+                    <a class="space-right-10" ng-click="$ctrl.forHelp();"><i class="fa fa-question-circle-o"></i></a>
+                    <a class="space-right-10" ng-click="$ctrl.logout();"><i class="fa fa-sign-out"></i></a>
+                </li>
+                <li class="dividing-line-level" ng-if="$ctrl.headInit.ifWorking">
+                    <a ng-click="$ctrl.switchWork('on')"><i class="fa fa-toggle-off fa-lg"></i>&nbsp;离开</a>
+                    <a class="space-lr-10" ng-click="$ctrl.mailbox();"><i class="fa fa-envelope-open-o"></i></a>
+                    <a class="space-right-10" ng-click="$ctrl.forHelp();"><i class="fa fa-question-circle-o"></i></a>
+                    <a class="space-right-10" ng-click="$ctrl.logout();"><i class="fa fa-sign-out"></i></a>
+                </li>
+                <li ng-class="{true:'', false:'dividing-line-level'}[$last]" ng-repeat="x in $ctrl.workTableList track by $index" ng-click="$ctrl.openWorkTable(x);">
+                    <a><i class="fa {{x.icon}}"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{x.name}}工作台</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--小屏幕适配-->
+    <div class="for-smscreen" ng-if="$ctrl.windowWidth<768">
+        <div class="sys-title-font text-center">FeiSystem</div>
+        <div class="text-right">
+            <a drop-down id="memu-box-sm">
+                <i class="fa fa-th fa-lg"></i>
+            </a>
+            <ul hidden>
+                <li class="dividing-line-level menubar-sm-search">
+                    <input type="text" placeholder="">
+                    <button class="" type="button" ng-click="$ctrl.headSearch();">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </li>
+                <li class="dividing-line-level" ng-if="!$ctrl.headInit.ifWorking">
+                    <a ng-click="$ctrl.switchWork('off')"><i class="fa fa-toggle-on fa-lg"></i>&nbsp;在线</a>
+                    <a class="space-lr-10" ng-click="$ctrl.mailBox();"><i class="fa fa-envelope-open-o"></i></a>
+                    <a class="space-right-10" ng-click="$ctrl.forHelp();"><i class="fa fa-question-circle-o"></i></a>
+                    <a class="space-right-10" ng-click="$ctrl.logout();"><i class="fa fa-sign-out"></i></a>
+                </li>
+                <li class="dividing-line-level" ng-if="$ctrl.headInit.ifWorking">
+                    <a ng-click="$ctrl.switchWork('on')"><i class="fa fa-toggle-off fa-lg"></i>&nbsp;离开</a>
+                    <a class="space-lr-10" ng-click="$ctrl.mailBox();"><i class="fa fa-envelope-open-o"></i></a>
+                    <a class="space-right-10" ng-click="$ctrl.forHelp();"><i class="fa fa-question-circle-o"></i></a>
+                    <a class="space-right-10" ng-click="$ctrl.logout();"><i class="fa fa-sign-out"></i></a>
+                </li>
+                <li ng-class="{true:'', false:'dividing-line-level'}[$last]" ng-repeat="x in $ctrl.workTableList track by $index" ng-click="$ctrl.openWorkTable(x);">
+                    <a><i class="fa {{x.icon}}"></i>&nbsp;&nbsp;&nbsp;&nbsp;{{x.name}}工作台</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

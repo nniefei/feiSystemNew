@@ -1,0 +1,45 @@
+/**
+ * Created by: fei on date: 2017/10/17.
+ */
+
+/*********************************************************************************/
+/**                                                                             **/
+/**                                   登录外框                                   **/
+/**                                                                             **/
+/*********************************************************************************/
+.sys-login{
+    position: fixed;
+    padding-top: 7%;
+    width: 100%;
+    height: 100%;
+    background-image: url("../../../assets/image/login/login.png");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: 50% 50%;
+}
+/*********************************************************************************/
+/**                                                                             **/
+/**                                   登录表格                                   **/
+/**                                                                             **/
+/*********************************************************************************/
+.login-form{
+    border-radius: 3%;
+    padding: 10%;
+    background: black;
+    opacity: .7;
+    color: white;
+}
+.login-form input{
+    background: transparent;
+    color: white;
+}
+.login-head{
+    margin-top: -5%;
+    margin-bottom: 7%;
+}
+.login-body .input-group{
+    width: 100%;
+}
+.login-foot{
+    margin-top: 9%;
+}

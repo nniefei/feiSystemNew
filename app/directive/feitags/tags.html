@@ -1,0 +1,58 @@
+<!-- Created by: fei on date: 2017/8/15. -->
+<style>
+    .nav-tabs{
+        padding-top: 5px;
+        margin-bottom: 1%;
+    }
+    .nav>.tag-li:first-child{
+        text-align: center;
+        width: 36px;
+        height: 36px;
+        line-height: 36px;
+    }
+    .nav>.tag-li>a{
+        padding: 9px 10px 5px;
+    }
+    .nav>.tag-li>a:hover{
+        background: transparent;
+    }
+    .nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+        color: #555;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-bottom-color: transparent;
+        cursor: pointer;
+    }
+    .close::before {
+        content: "\2716";
+        font-size: 1000%;
+    }
+    .close {
+        line-height: 10px;
+        text-align: center;
+        height: 10px;
+        width: 10px;
+        font-size: 1px;
+        padding: 1px;
+    }
+</style>
+
+<ul class="top-tags nav nav-tabs">
+    <li class="tag-li" ng-click="toggleSidebar();">
+        <i class="fa fa-exchange"></i>
+    </li>
+    <li class="tag-li" ng-class="{true: 'active', false: ''}[$index===0]"
+        ng-repeat="tag in tagInfo track by $index" ngrepeat-finish
+        ng-click="chooseTag(tag, $index);">
+        <a href="#{{tag.key}}" onclick="return false;" data-toggle="tab">
+            {{tag.name}}工作台&nbsp;&nbsp;
+            <span class="close" ng-click="delTag(tag);"></span>
+        </a>
+    </li>
+</ul>
+<div class="tab-content">
+    <div id="{{tag.key}}" class="tab-pane fade" ng-class="{true: 'in active', false: 'tab-pane fade'}[$index===0]"
+         ng-repeat="tag in tagInfo track by $index" ngrepeat-finish>
+        <div ng-include="tag.url"></div>
+    </div>
+</div>

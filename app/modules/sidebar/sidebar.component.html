@@ -1,0 +1,46 @@
+<!-- Created by: fei on date: 2017/8/15. -->
+<div>
+    <ul class="nav sidebar-nav">
+        <!--个人信息部分-->
+        <div class="sidebar-head">
+            <a id="sidebar-head" drop-down up-or-down>
+                欢迎您，Admin！
+                <i class="fa fa-angle-down"></i>
+                <i class="fa fa-angle-up" hidden></i>
+            </a>
+            <ul hidden>
+                <li>
+                    <div class="col-lg-6 col-md-6 com-sm-6 person-png" ng-click="$ctrl.changeInfo('png')"></div>
+                    <div class="col-lg-6 col-md-6 com-sm-6 person-info">
+                        <div class="row" ng-click="$ctrl.changeInfo('info')">
+                            <i class="fa fa-user-circle-o"></i>&nbsp;&nbsp;个人信息
+                        </div>
+                        <div class="row" ng-click="$ctrl.changeInfo('key')">
+                            <i class="fa fa-pencil-square-o"></i>&nbsp;&nbsp;修改密码
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!--侧边栏菜单部分-->
+        <li class="sidebar-body" ng-repeat="menuGrade1 in $ctrl.sidebarList.childModel track by $index" ng-click="$ctrl.clickMenuGrade(menuGrade1);">
+            <a id="{{menuGrade1.key}}-sidebar" drop-down drop-down-data="menuGrade1">
+                <i class="fa {{menuGrade1.icon}}"></i>&nbsp;&nbsp;{{menuGrade1.name}}
+            </a>
+            <ul hidden>
+                <li class="item-list" ng-repeat="menuGrade2 in menuGrade1.childModel track by $index" ng-click="$ctrl.clickMenuGrade(menuGrade2);">
+                    <a id="{{menuGrade2.key}}-sidebar" drop-down drop-down-data="menuGrade2">
+                        <i class="fa {{menuGrade2.icon}}"></i>&nbsp;&nbsp;{{menuGrade2.name}}
+                    </a>
+                    <ul hidden>
+                        <li class="item-list" ng-repeat="menuGrade3 in menuGrade2.childModel track by $index" ng-click="$ctrl.clickMenuGrade(menuGrade3);">
+                            <a id="{{menuGrade3.key}}-sidebar" drop-down drop-down-data="menuGrade3">
+                                <i class="fa {{menuGrade3.icon}}"></i>&nbsp;&nbsp;{{menuGrade3.name}}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>

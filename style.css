@@ -1,0 +1,102 @@
+/**
+ * Created by: fei on date: 2017/8/15.
+ */
+
+/*********************************************************************************/
+/**                                                                             **/
+/**                清除body html内外边距     全局默认字体微软雅黑                   **/
+/**                                                                             **/
+/*********************************************************************************/
+body html{
+    background-color: #583e7e;
+    margin: 0;padding: 0;
+    font-family: "Microsoft YaHei";
+}
+.sys-title-font{
+    font-family: "DancingScript";
+    font-size: 30px;
+}
+/*********************************************************************************/
+/**                                                                             **/
+/**                                    个性字体                                  **/
+/**                                                                             **/
+/*********************************************************************************/
+@font-face {
+    font-family: 'Sarina';
+    src: url("assets/custom-font/Sarina-Regular.ttf?v=8219308") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Rye';
+    src: url("assets/custom-font/Rye-Regular.ttf?v=7232cf8") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Pacifico';
+    src: url("assets/custom-font/Pacifico.ttf?v=6b6170f") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'DancingScript';
+    src: url("assets/custom-font/DancingScript-Regular.otf?v=21f03e3") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat-Regular';
+    src: url("assets/custom-font/montserrat/Montserrat-Regular.otf?v=91696e0") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Montserrat-Thin';
+    src: url("assets/custom-font/montserrat/Montserrat-Thin.otf?v=85332c6") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MontserratAlternates-Regular';
+    src: url("assets/custom-font/montserrat/MontserratAlternates-Regular.otf?v=4d17c0b") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'MontserratAlternates-Thin';
+    src: url("assets/custom-font/montserrat/MontserratAlternates-Thin.otf?v=06c4491") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+/*********************************************************************************/
+/**                                                                             **/
+/**                                      空格                                    **/
+/**                                                                             **/
+/*********************************************************************************/
+.space-lr-10{
+    padding-left: 10%;
+    padding-right: 10%;
+}
+.space-left-10{
+    padding-left: 10%;
+}
+.space-right-10{
+    padding-right: 10%;
+}
+.space-lr-1{
+    padding-left: 1%;
+    padding-right: 1%;
+}
+/*********************************************************************************/
+/**                                                                             **/
+/**                                   水平分割线                                 **/
+/**                                                                             **/
+/*********************************************************************************/
+.dividing-line-level:after{
+    content:'';
+    display: block;
+    height: 1px;width: 90%;
+    border-bottom: 1px solid #ccc;
+    opacity:.1;
+}

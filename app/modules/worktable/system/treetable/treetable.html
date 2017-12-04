@@ -1,0 +1,78 @@
+<!-- Created by FEI on 2017/10/31. -->
+<style>
+    .right-manage{
+
+    }
+    .right-manage .tool-bar{
+        padding: 1%;
+    }
+    .right-manage .tree-table{
+        padding: 0 1% 1%;
+    }
+    .right-manage .tree-table .row{
+        padding: 9px 0;
+        border:1px solid #ccc;
+    }
+    .right-manage .tree-table .row:hover, .right-manage .tree-table .row:active{
+        background: #ddd;
+    }
+    .right-manage ul{
+        list-style: none;
+        padding: 0 15px;
+    }
+    .active-div{
+        background: #ddd;
+    }
+    .inactive-div{
+        background: white;
+    }
+</style>
+
+<div ng-controller="rightmanageCtrl" class="right-manage for-scroll">
+    <div class="tool-bar">
+        <button class="btn btn-default" ng-click="optionModule('parent')">新增同级模块</button>
+        <button class="btn btn-default" ng-click="optionModule('children')">新增子级模块</button>
+        <button class="btn btn-default" ng-click="optionModule('mod')">修改模块</button>
+        <button class="btn btn-default" ng-click="optionModule('del')">删除模块</button>
+        <button class="btn btn-default" ng-click="optionModule('relation')">关联权限</button>
+    </div>
+
+    <div class="tree-table">
+        <script id="tr-tpl" type="text/ng-template">
+            <li data-ng-repeat="x in moduleLists track by $index">
+                <a id="{{x.id}}" next-sibling close-or-open datanum="{{x.children.length}}">
+                    <div class="row if-active" active-local param="{{x}}">
+                        <div class="col-lg-1">
+                            <i ng-show="x.children.length>0" class="fa fa-plus-square"></i>
+                            <i ng-show="x.children.length==0" class="fa fa-square"></i>
+                            <i hidden class="fa fa-minus-square" ></i>
+                            {{x.id}}
+                        </div>
+                        <div class="col-lg-1">{{x.name}}</div>
+                        <div class="col-lg-1">{{x.type}}</div>
+                        <div class="col-lg-1">{{x.label}}</div>
+                        <div class="col-lg-4">{{x.icon}}</div>
+                        <div class="col-lg-4">{{x.url}}</div>
+                    </div>
+                </a>
+                <ul hidden ng-if="x.children.length" ng-include="'tr-tpl'" ng-init="moduleLists=x.children"></ul>
+            </li>
+        </script>
+
+        <li style="list-style: none;">
+            <a>
+                <div data-ng-if="moduleLists.length>0" class="row" style="margin: 0">
+                    <div class="col-lg-1">模块Id</div>
+                    <div class="col-lg-1">模块名称</div>
+                    <div class="col-lg-1">模块类型</div>
+                    <div class="col-lg-1">模块标签</div>
+                    <div class="col-lg-4">模块图片</div>
+                    <div class="col-lg-4">模块路径</div>
+                </div>
+            </a>
+        </li>
+        <ul data-ng-include="'tr-tpl'"></ul>
+    </div>
+
+    <tree-grid tree-data="tree_data" col-defs= "col_defs"></tree-grid>
+</div>

@@ -1,0 +1,73 @@
+/**
+ * Created by: fei on date: 2017/10/17.
+ */
+
+/*********************************************************************************/
+/**                                                                             **/
+/**                                  外框布局                                    **/
+/**                                                                             **/
+/*********************************************************************************/
+.work-table {
+    transition: all 0.5s ease;
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 60px;
+}
+.work-table-side {
+    position: fixed;
+    top: 60px;
+    width: 0;
+    height: 100%;
+    margin-left: -200px;
+    overflow: auto;
+    background: #456DA0;
+}
+.work-table-main {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #edf1f5;
+}
+.work-table-main fei-tags{
+    width: inherit;
+    height: inherit;
+}
+.work-table-main div{
+    width: inherit;
+    height: inherit;
+}
+.work-table-side::-webkit-scrollbar {
+    display: none;
+}
+/*********************************************************************************/
+/**                                                                             **/
+/**                                  侧边栏控制                                  **/
+/**                                                                             **/
+/*********************************************************************************/
+.remove-sidebar{
+    padding: 0;
+    height: 100%;
+}
+.remove-sidebar .work-table-side {
+    width: 200px;
+    height: 100%;
+}
+.remove-sidebar .work-table-main {
+    width: 100%;
+    height: 100%;
+}
+.add-sidebar{
+    padding-left: 200px;
+    height: 100%;
+}
+.add-sidebar .work-table-side {
+    width: 200px;
+    height: 100%;
+}
+.add-sidebar .work-table-main {
+    width: 100%;
+    height: 100%;
+}

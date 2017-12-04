@@ -1,0 +1,124 @@
+/**
+ * Created by: fei on date: 2017/10/20.
+ */
+/*********************************************************************************/
+/**                                                                             **/
+/**                                  侧边栏外框                                  **/
+/**                                                                             **/
+/*********************************************************************************/
+.sidebar-nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    width: 200px;height: auto;
+}
+/*********************************************************************************/
+/**                                                                             **/
+/**                                  侧边栏头部                                  **/
+/**                                                                             **/
+/*********************************************************************************/
+.sidebar-nav .sidebar-head{
+    width: 100%;
+    color: white;
+}
+.sidebar-nav .sidebar-head a{
+    display: inline-block;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 120%;
+    cursor: pointer;
+}
+.sidebar-nav .sidebar-head ul{
+    padding: 15px;
+    height: 100px;width: 100%;
+    background: #315683;
+}
+.sidebar-nav .sidebar-head ul li{
+    width: 100%;
+    height: 70px;
+    position: relative;
+}
+.sidebar-nav .sidebar-head .person-png{
+    position: absolute;
+    background-image: url(../../../assets/image/png/demo.png);
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: 150%;
+    height: 70px;
+    width: 70px;
+    border: 3px solid #efefef;
+    border-radius: 50%;
+    padding: 0;
+    cursor: pointer;
+}
+.sidebar-nav .sidebar-head .person-info{
+    position: absolute;
+    left: 90px;
+    height: 70px;
+    width: auto;
+    right: 0;
+}
+.sidebar-nav .sidebar-head .person-info div{
+    height: 35px;
+    line-height: 35px;
+    cursor: pointer;
+}
+/*********************************************************************************/
+/**                                                                             **/
+/**                                  侧边栏主体                                  **/
+/**                                                                             **/
+/*********************************************************************************/
+.sidebar-nav li {
+    display: inline-block;
+    line-height: 20px;
+    position: relative;
+    width: 100%;
+}
+.sidebar-nav li a {
+    color: white;
+    display: block;
+    padding: 10px 15px;
+    text-decoration: none;
+    cursor: pointer;
+}
+.sidebar-nav li ul{
+    background: #315683;
+}
+.sidebar-nav li a:hover, .sidebar-nav li a:active, .sidebar-nav li a:focus {
+    color: black;
+    text-decoration: none;
+}
+.sidebar-nav li ul li a:hover{
+    background: silver;
+}
+.sidebar-nav li ul li ul li a:hover, .sidebar-nav li ul li ul li a:active, .sidebar-nav li ul li ul li a:focus{
+    background: silver;
+}
+/*********************************************************************************/
+/**                                                                             **/
+/**                              侧边栏主体模拟树结构连线                          **/
+/**                                                                             **/
+/*********************************************************************************/
+.sidebar-nav li ul li::before, .sidebar-nav li ul li::after {
+    content:'';
+    left:-20px;
+    position:absolute;
+    right:auto
+}
+.sidebar-nav li ul li::before {
+    border-left:1px solid #999;
+    bottom:50px;
+    height:100%;
+    top:0;
+    width:1px
+}
+.sidebar-nav li ul li::after {
+    border-top:1px solid #999;
+    height:20px;
+    top:20px;
+    width:20px
+}
