@@ -1,7 +1,9 @@
 /**
  * Created by: fei on date: 2017/10/20.
  */
-// sidebar组件
+
+
+
 var appSidebar = {
     restrict: 'E',
     templateUrl: 'app/modules/sidebar/sidebar.component.html',

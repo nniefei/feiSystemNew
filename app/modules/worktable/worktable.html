@@ -1,17 +1,10 @@
 <!-- Created by: fei on date: 2017/8/15. -->
 
-<!--head-->
-<app-head window-width="windowWidth" work-table-list="workTableList"></app-head>
-<!--main-->
-<div>
-    <div ng-class="{true:'add-sidebar', false:'remove-sidebar'}[ifShowSidebar]" class="work-table">
-        <!--sidebar-->
-        <div class="work-table-side">
-            <app-sidebar></app-sidebar>
-        </div>
-        <!--content-->
-        <div class="work-table-main">
-            <fei-tags tag-list="tagList.tTop"></fei-tags>
-        </div>
-    </div>
-</div>
+
+
+<app-layout
+        window-width="windowWidth"
+        work-table-list="workTableList"
+        if-show-sidebar="ifShowSidebar"
+        tag-list="tagList">
+</app-layout>

@@ -1,4 +1,7 @@
 <!-- Created by: fei on date: 2017/8/15. -->
+
+
+
 <div>
     <ul class="nav sidebar-nav">
         <!--个人信息部分-->
@@ -22,6 +25,7 @@
                 </li>
             </ul>
         </div>
+
         <!--侧边栏菜单部分-->
         <li class="sidebar-body" ng-repeat="menuGrade1 in $ctrl.sidebarList.childModel track by $index" ng-click="$ctrl.clickMenuGrade(menuGrade1);">
             <a id="{{menuGrade1.key}}-sidebar" drop-down drop-down-data="menuGrade1">

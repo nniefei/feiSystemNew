@@ -1,6 +1,9 @@
 /**
  * Created by: fei on date: 2017/8/29.
  */
+
+
+
 app.controller("loginCtrl", function($scope, $state) {
     //初始化页面数据
     $scope.login = {

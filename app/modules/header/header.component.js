@@ -1,7 +1,9 @@
 /**
  * Created by: fei on date: 2017/8/15.
  */
-//header组件
+
+
+
 var appHead = {
     restrict: 'E',
     bindings: {

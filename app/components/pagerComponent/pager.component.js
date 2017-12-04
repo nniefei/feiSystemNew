@@ -4,6 +4,9 @@
  * Author: fei
  * Version:2.0.0
  */
+
+
+
 var feiPager = {
     restrict: 'E',
     bindings: {
