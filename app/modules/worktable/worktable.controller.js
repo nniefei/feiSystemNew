@@ -31,7 +31,7 @@ app.controller("worktableCtrl", ["$q", "$scope", "$rootScope", "tagService", "da
         // 默认展示侧边栏
         $rootScope.ifShowSidebar = true;
         // 初始化工作台列表
-        $rootScope.workTableList = dataModelService.getModelInfo();
+        $rootScope.workTableList = dataModelService.modelInfo;
         // 初始化标签页
         $rootScope.tagList = {
             tTop: [$rootScope.workTableList[0]]

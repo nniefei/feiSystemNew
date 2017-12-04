@@ -12,7 +12,7 @@ var appSidebar = {
         var sd = this;
         sd.$onInit = function () {
             //获取侧边栏信息
-            sd.sidebarList = (dataModelService.getModelInfo())[0];
+            sd.sidebarList = (dataModelService.modelInfo)[0];
         };
         sd.$postLink = function () {
             // 修改信息
