@@ -38,21 +38,21 @@
 </style>
 
 <ul class="top-tags nav nav-tabs">
-    <li class="tag-li" ng-click="toggleSidebar();">
+    <li class="tag-li" ng-click="$ctrl.toggleSidebar();">
         <i class="fa fa-exchange"></i>
     </li>
     <li class="tag-li" ng-class="{true: 'active', false: ''}[$index===0]"
-        ng-repeat="tag in tagInfo track by $index" ngrepeat-finish
-        ng-click="chooseTag(tag, $index);">
+        ng-repeat="tag in $ctrl.tagList track by $index" ngrepeat-finish
+        ng-click="$ctrl.chooseTag(tag, $index);">
         <a href="#{{tag.key}}" onclick="return false;" data-toggle="tab">
             {{tag.name}}工作台&nbsp;&nbsp;
-            <span class="close" ng-click="delTag(tag);"></span>
+            <span class="close" ng-click="$ctrl.delTag(tag);"></span>
         </a>
     </li>
 </ul>
 <div class="tab-content">
     <div id="{{tag.key}}" class="tab-pane fade" ng-class="{true: 'in active', false: 'tab-pane fade'}[$index===0]"
-         ng-repeat="tag in tagInfo track by $index" ngrepeat-finish>
+         ng-repeat="tag in $ctrl.tagList track by $index" ngrepeat-finish>
         <div ng-include="tag.url"></div>
     </div>
 </div>

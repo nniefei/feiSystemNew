@@ -18,6 +18,11 @@ var appLayout = {
         al.$onInit = function () {
 
         };
+        al.refreshTagList = function () {
+            setTimeout(function refresh() {
+                $('.top-tags li a:last').tab('show');
+            },0);
+        };
     }]
 };
 

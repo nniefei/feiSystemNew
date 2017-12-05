@@ -2,7 +2,7 @@
  * Created by: fei on date: 2017/8/16.
  */
 //工作台主controller
-app.controller("worktableCtrl", ["$q", "$scope", "$rootScope", "tagService", "dataModelService", function ($q, $scope, $rootScope, tagService, dataModelService) {
+app.controller("worktableCtrl", ["$q", "$scope", "$rootScope", "dataModelService", function ($q, $scope, $rootScope, dataModelService) {
 
     var wtc = this;
 
