@@ -24,39 +24,42 @@ app.directive("feiTags", function () {
             //删除标签页
             $scope.delTag = function (tag) {
                 console.log(tag);
-                /*if (id==="homework") {
-                    $rootScope.showSideBar = false;
-                }
                 $scope.tagInfo.map(function (x, index) {
-                    if (id === x.id) {
+                    if (tag.key === x.key) {
                         if (index===(($scope.tagInfo).length-1)) {
                             ($scope.tagInfo).splice(index,1);
-                            var activeId = $scope.tagInfo[index-1]===undefined?"":$scope.tagInfo[index-1].id;
+                            var activeId = $scope.tagInfo[index-1]===undefined?"":$scope.tagInfo[index-1].key;
                             if (""!==activeId) {
                                 setTimeout(function refresh() {
                                     $('.top-tags a[href="#'+activeId+'"]').tab('show');
                                 },0);
+                                $scope.chooseTag($scope.tagInfo[index-1], activeId);
+                            } else {
+                                $rootScope.ifShowSidebar = true;
                             }
                         } else {
                             ($scope.tagInfo).splice(index,1);
                         }
                     }
                 });
-                $rootScope.tagList.top.map(function (y, index) {
-                    if (id === y.id) {
+                $rootScope.tagList.tTop.map(function (y, index) {
+                    if (tag.key === y.key) {
                         if (index===(($rootScope.tagList.top).length-1)) {
                             ($rootScope.tagList.top).splice(index,1);
-                            var activeId = $scope.tagInfo[index-1]===undefined?"":$scope.tagInfo[index-1].id;
+                            var activeId = $scope.tagInfo[index-1]===undefined?"":$scope.tagInfo[index-1].key;
                             if (""!==activeId) {
                                 setTimeout(function refresh() {
                                     $('.top-tags a[href="#'+activeId+'"]').tab('show');
                                 },0);
+                                $scope.chooseTag($scope.tagInfo[index-1], activeId);
+                            } else {
+                                $rootScope.ifShowSidebar = true;
                             }
                         } else {
                             ($rootScope.tagList.top).splice(index,1);
                         }
                     }
-                });*/
+                });
             };
         }
     }
